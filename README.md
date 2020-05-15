@@ -11,7 +11,7 @@ Goals
 
 Technology Stack
 * Raspberry Pi 3B (or newer)
-* TBD (Experimenting with Ubuntu Core, Ubuntu Server 20.04 and maybe Raspbian)
+* TBD (Experimenting with Ubuntu Core, Ubuntu Server 20.04 and maybe Raspbian to see which one is securer)
 * Docker
 * Python 3.8 (may be later on for ML)
 * Node-Red
