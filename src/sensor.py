@@ -9,6 +9,8 @@ import signal
 import sys
 import time
 from gpio import GPIOMonitor
+from gpio import has_multi_thread
+from gpio import has_event_based
 from mqttpub import MQTTPublisher
 
 BOUNCE_TIME = 200
@@ -35,7 +37,7 @@ class Sensor(GPIOMonitor):
 
     def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos, retain):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
-        self.pub = MQTTPublisher(self.get_hostname(), self.get_pid(), name, mqtthost, mqttport, topic, qos, retain)
+        self.pub = MQTTPublisher(name, mqtthost, mqttport, topic, qos, retain)
         self.pub.set_listener(process_message)
         self.channel = channel
         self.interval = interval
@@ -59,7 +61,7 @@ class Sensor(GPIOMonitor):
             GPIO.add_event_detect(self.channel, GPIO.BOTH, self.notify, bouncetime=BOUNCE_TIME)
 
     def polling(self):
-        GPIO.setup(self.channel, GPIO.IN)
+        GPIO.setup(self.channel, GPIO.IN, pull_up_down=self.edge)
         self.pub.loop_start()
         while True:
             self.notify()
@@ -80,5 +82,5 @@ class Sensor(GPIOMonitor):
 # How to use
 #TEST_MQTT_HOST = "test.mosquitto.org"
 #TEST_MQTT_PORT = 1883
-#sensor = Sensor("thermometer", 4, INTERVAL, GPIO.PUD_UP, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/temperature", 0, True)
+#sensor = Sensor("thermometer", 6, INTERVAL, GPIO.PUD_UP, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/temperature", 0, True)
 #sensor.run()

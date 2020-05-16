@@ -13,26 +13,22 @@ class MQTTSubscriber:
     mqttport = None
     topic = ""
     qos = 0
-    retain = True
     interval = 1
     name = ""
     sender = ""
     session = None
     data = None
 
-    def __init__(self, hostname, pid, name, mqtthost, mqttport, topic, qos, retain):
-        self.hostname = hostname
-        self.pid = pid
+    def __init__(self, name, mqtthost, mqttport, topic, qos):
         self.name = name
-        self.sender = "{}({})".format(self.name, self.pid)
+        self.sender = "{}".format(self.name)
         self.mqtthost = mqtthost
         self.mqttport = mqttport
         self.topic = topic
         self.qos = qos
-        self.retain = retain
         self.session = MQTT.Client(self.sender, True, None, MQTT.MQTTv311, "tcp")
         self.session.connect(self.mqtthost, self.mqttport)
-        self.session.subscribe(self.topic, self.qos, self.retain)
+        self.session.subscribe(self.topic, self.qos)
 
     def get_name(self):
         return self.name

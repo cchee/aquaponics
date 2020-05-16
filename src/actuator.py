@@ -29,9 +29,9 @@ class Actuator(GPIOMonitor):
     sub = None
     channel = DEFAULT_PIN
 
-    def __init__(self, name, channel, mqtthost, mqttport, topic, qos, retain):
+    def __init__(self, name, channel, mqtthost, mqttport, topic, qos):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
-        self.sub = MQTTSubscriber(self.get_hostname(), self.get_pid(), name, mqtthost, mqttport, topic, qos, retain)
+        self.sub = MQTTSubscriber(name, mqtthost, mqttport, topic, qos)
         self.channel = channel
         GPIO.setup(self.channel, GPIO.OUT)
 
@@ -51,5 +51,5 @@ class Actuator(GPIOMonitor):
 # How to use
 #TEST_MQTT_HOST = "test.mosquitto.org"
 #TEST_MQTT_PORT = 1883
-#actuator = Actuator("thermostat", 5, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/temperature", 0, True)
+#actuator = Actuator("thermostat", 5, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/temperature", 0)
 #actuator.run()

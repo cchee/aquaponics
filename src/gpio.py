@@ -34,5 +34,5 @@ class GPIOMonitor(Agent):
         GPIO.setmode(mode)
         GPIO.setwarnings(warning)
 
-    def get_version():
-        return version
+    def get_version(self):
+        return self.version
