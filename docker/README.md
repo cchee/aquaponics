@@ -26,11 +26,11 @@ following steps to setup.
 * cat "0 * * * * sudo ~/IOTstack/scripts/docker_backup.sh > /dev/null 2>&1" > crontab -e
 
 SECURITY ISSUES:
-Docker does not honor ufw firewall rules, so external browser can still access port that were not supposedly accessible under UFW rules. Although gcgraner menu.sh does a lot of heavy lifting and in fact it is amazing and time saver, it does not include SSL yet. For home use, it seems fine as long as wifi access and firewall are setup properly.
+Docker does not honor ufw firewall rules, so external browser can still access port that were not supposedly accessible under UFW rules. Although gcgraner menu.sh does a lot of heavy lifting and in fact it is an amazing time saver, it does not include SSL yet. For home use, it seems fine as long as wifi access and firewall are setup properly.
 
-One possible way to secure all docker container to use https is to setup nginx with reverse proxy, check out https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/
+One possible way to secure all docker container to use https and also setup nginx with reverse proxy, check out https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/
 
-To setup docker-compose.yml with ssl, ssl key and ssl cert files need to be created. Use scripts under aquaponics/scripts to generate self-signed SSL certificates
+To setup docker-compose.yml with ssl, ssl key and ssl cert files need to be created. Use scripts under aquaponics/scripts to generate self-signed SSL certificates.
 
 I have tried to secure docker with ufw, check out https://github.com/chaifeng/ufw-docker and to make sure ufw has the following rules, but it does not seem to work for me.
 * sudo ufw default deny incoming
