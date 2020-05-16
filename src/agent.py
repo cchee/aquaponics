@@ -8,14 +8,14 @@ import signal
 
 class Agent:
 
-    hostname = os.uname()[1]
-    pid = os.getpid()
 
     def __init__(self, sig, handler):
         signal.signal(sig, handler)
+        self.hostname = os.uname()[1]
+        self.hpid = os.getpid()
 
-    def get_pid():
-        return pid
+    def get_pid(self):
+        return self.pid
 
-    def get_hostname():
-        return hostname
+    def get_hostname(self):
+        return self.hostname
