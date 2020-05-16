@@ -11,9 +11,9 @@ Goals
 
 Technology Stack
 * Raspberry Pi 3B (or newer)
-* TBD (Experimenting with Ubuntu Core, Ubuntu Server 20.04 and maybe Raspbian to see which one is securer)
+* Raspbian Buster (Need additional steps to secure installation)
 * Docker
-* Python 3.8 (may be later on for ML)
+* Python 3.8
 * Node-Red
 * Mosquitto
 * InfluxDB
