@@ -30,11 +30,6 @@ def signal_handler(sig, frame):
 
 class Sensor(GPIOMonitor):
 
-    pub = None
-    channel = GND_PIN
-    interval = INTERVAL
-    edge = None
-
     def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos, retain):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
         self.pub = MQTTPublisher(name, mqtthost, mqttport, topic, qos, retain)

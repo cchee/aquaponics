@@ -27,10 +27,9 @@ def has_multi_thread(version):
 
 class GPIOMonitor(Agent):
 
-    version = GPIO.VERSION
-
     def __init__(self, mode, warning, sig, handler):
         super().__init__(sig, handler)
+    	self.version = GPIO.VERSION
         GPIO.setmode(mode)
         GPIO.setwarnings(warning)
 

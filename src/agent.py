@@ -8,7 +8,6 @@ import signal
 
 class Agent:
 
-
     def __init__(self, sig, handler):
         signal.signal(sig, handler)
         self.hostname = os.uname()[1]

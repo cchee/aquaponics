@@ -11,8 +11,6 @@ def signal_handler(sig, frame):
 
 class Injector(GPIOMonitor):
 
-    trigger = 0
-
     def __init__(self, trigger):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
         self.trigger = trigger

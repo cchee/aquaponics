@@ -26,9 +26,6 @@ def signal_handler(sig, frame):
 
 class Actuator(GPIOMonitor):
 
-    sub = None
-    channel = DEFAULT_PIN
-
     def __init__(self, name, channel, mqtthost, mqttport, topic, qos):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
         self.sub = MQTTSubscriber(name, mqtthost, mqttport, topic, qos)

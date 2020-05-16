@@ -9,16 +9,6 @@ import time
 
 class MQTTSubscriber:
 
-    mqtthost = None
-    mqttport = None
-    topic = ""
-    qos = 0
-    interval = 1
-    name = ""
-    sender = ""
-    session = None
-    data = None
-
     def __init__(self, name, mqtthost, mqttport, topic, qos):
         self.name = name
         self.sender = "{}".format(self.name)
