@@ -29,7 +29,7 @@ class GPIOMonitor(Agent):
 
     def __init__(self, mode, warning, sig, handler):
         super().__init__(sig, handler)
-    	self.version = GPIO.VERSION
+        self.version = GPIO.VERSION
         GPIO.setmode(mode)
         GPIO.setwarnings(warning)
 
