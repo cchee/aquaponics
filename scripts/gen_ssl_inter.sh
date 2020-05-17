@@ -35,3 +35,10 @@ chmod 400 $COMPANY/ca/intermediate/certs/ca-chain.cert.pem
 
 echo "Verify CA Chain Certificate for ${COMPANY}..."
 openssl verify -CAfile $COMPANY/ca/certs/ca.cert.pem $COMPANY/ca/intermediate/certs/ca-chain.cert.pem
+
+echo "Generate Diffie-Hellman params and DSA Certificate for ${COMPANY}..."
+openssl dhparam -outform PEM -out $COMPANY/ca/intermediate/certs/dhparams.pem 4096
+openssl dsaparam -out $COMPANY/ca/intermediate/certs/dsaparams.pem 4096
+openssl req -config $COMPANY/ca/intermediate/openssl.cnf -out $COMPANY/ca/intermediate/csr/dsa.csr.pem -keyout $COMPANY/ca/intermediate/private/dsa.key.pem -newkey dsa:$COMPANY/ca/intermediate/certs/dsaparams.pem
+openssl ca -config $COMPANY/ca/intermediate/openssl.cnf -in $COMPANY/ca/intermediate/csr/dsa.csr.pem -out $COMPANY/ca/intermediate/certs/dsa.cert.pem
+
