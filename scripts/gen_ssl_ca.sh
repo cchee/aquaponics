@@ -21,3 +21,6 @@ chmod 444 $COMPANY/ca/certs/ca.cert.pem
 
 echo "Verifying CA root certificate for ${COMPANY}..."
 openssl x509 -noout -text -in $COMPANY/ca/certs/ca.cert.pem
+
+echo "Generate Diffie-Hellman params for ${COMPANY}..."
+openssl dhparam -out $COMPANY/ca/certs/dhparams.pem 4096
