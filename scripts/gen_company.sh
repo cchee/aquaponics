@@ -18,7 +18,15 @@ mkdir -p $CURR_DIR/$COMP_DIR/ca/certs
 mkdir -p $CURR_DIR/$COMP_DIR/ca/newcerts
 mkdir -p $CURR_DIR/$COMP_DIR/ca/intermediate/private
 mkdir -p $CURR_DIR/$COMP_DIR/ca/intermediate/certs
+mkdir -p $CURR_DIR/$COMP_DIR/ca/intermediate/newcerts
 mkdir -p $CURR_DIR/$COMP_DIR/ca/intermediate/csr
 
 echo "sed -e 's?_CURRENT_DIR_?${CURR_DIR}?g' -e 's?_COMPANY_?${COMP_DIR}?g' -e 's?_ORGANIZATION_NAME_?${COMPANY}?g' ssl_template/ca/openssl.cnf > ${CURR_DIR}/${COMP_DIR}/ca/openssl.cnf" | sh
 echo "sed -e 's?_CURRENT_DIR_?${CURR_DIR}?g' -e 's?_COMPANY_?${COMP_DIR}?g' -e 's?_ORGANIZATION_NAME_?${COMPANY}?g' ssl_template/ca/intermediate/openssl.cnf > ${CURR_DIR}/${COMP_DIR}/ca/intermediate/openssl.cnf" | sh
+
+touch $COMP_DIR/ca/index.txt
+echo 1000 > $COMP_DIR/ca/serial
+touch $COMP_DIR/ca/intermediate/index.txt
+echo 1000 > $COMP_DIR/ca/intermediate/serial
+echo 1000 > $COMP_DIR/ca/intermediate/crlnumber
+

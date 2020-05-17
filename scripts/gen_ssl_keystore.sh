@@ -6,7 +6,14 @@
 # Check number of args and return usage if error
 if [ $# -lt 1 ]; then
   echo "Usage: $0 <company directory name> <keystore password> [keystore private key pem] [client bundle certs pem] [alias]"
-  echo "WARNING: This removes intermediate CA file in company directory."
+  echo "WARNING: This removes intermediate CA keystore file in company directory."
+  exit 0
+fi
+
+which keytool > /dev/null
+status=$?
+if [ $status -ne 0 ]; then
+  echo "INFO: This script requires keytool from Java JRE packge."
   exit 0
 fi
 
