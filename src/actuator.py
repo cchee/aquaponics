@@ -49,7 +49,7 @@ class Actuator(GPIOAgent):
 #TEST_MQTT_HOST = "test.mosquitto.org"
 #TEST_MQTT_PORT = 1883
 #TEST_MQTT_TOPIC = "fish_tank/water_level"
-#TEST_MQTT_QOS = 0
-#DEBUG = True
+#TEST_MQTT_QOS = 0 # Optional
+#DEBUG = True # Optional
 #actuator = Actuator(ACTUATOR_ID, ACTUATOR_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/water_level", TEST_MQTT_QOS, DEBUG)
 #actuator.run()
