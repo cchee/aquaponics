@@ -7,8 +7,8 @@ from mqttsub import MQTTSubscriber
 
 class MQTTPublisher(MQTTSubscriber):
 
-    def __init__(self, name, mqtthost, mqttport, topic, qos, retain):
-        super().__init__(name, mqtthost, mqttport, topic, qos)
+    def __init__(self, name, mqtthost, mqttport, topic, qos, retain, debug):
+        super().__init__(name, mqtthost, mqttport, topic, qos, debug)
         self.retain = retain
 
     def send_msg(self, state):

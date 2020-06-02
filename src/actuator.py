@@ -12,12 +12,6 @@ from mqttsub import MQTTSubscriber
 
 DEFAULT_PIN = 0
 
-def process_message(client, userdata, message):
-    topic = str(message.topic)
-    value = str(message.payload.decode("utf-8")).split(':')
-    actuator.set_value(value[1])
-    print("Received {} from {} Set PIN {} to {}".format(value, topic, actuator.get_pin(), value[1]))
-
 def signal_handler(sig, frame):
     print('Ctrl-C pressed. GPIO cleanup.')
     actuator.disconnect()
@@ -26,11 +20,17 @@ def signal_handler(sig, frame):
 
 class Actuator(GPIOMonitor):
 
-    def __init__(self, name, channel, mqtthost, mqttport, topic, qos):
+    def __init__(self, name, channel, mqtthost, mqttport, topic, qos, debug):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
-        self.sub = MQTTSubscriber(name, mqtthost, mqttport, topic, qos)
+        self.sub = MQTTSubscriber(name, mqtthost, mqttport, topic, qos, debug)
         self.channel = channel
         GPIO.setup(self.channel, GPIO.OUT)
+
+    def process_message(self, client, userdata, message):
+        topic = str(message.topic)
+        value = str(message.payload.decode("utf-8")).split(':')
+        self.set_value(value[1])
+        print("Received {} from {} Set PIN {} to {}".format(value, topic, self.get_pin(), value[1]))
 
     def disconnect(self):
         self.sub.disconnect()
@@ -42,11 +42,11 @@ class Actuator(GPIOMonitor):
         return self.channel
 
     def run(self):
-        self.sub.set_listener(process_message)
+        self.sub.set_listener(self.process_message)
         self.sub.loop_forever()
 
 # How to use
 #TEST_MQTT_HOST = "test.mosquitto.org"
 #TEST_MQTT_PORT = 1883
-#actuator = Actuator("thermostat", 5, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/temperature", 0)
+#actuator = Actuator("water_level_reader", 5, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/upper_water_level", 0, True)
 #actuator.run()

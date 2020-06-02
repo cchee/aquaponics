@@ -17,11 +17,6 @@ BOUNCE_TIME = 200
 GND_PIN = 39
 INTERVAL = 1
 
-def process_message(client, userdata, message):
-    topic = str(message.topic)
-    value = str(message.payload.decode("utf-8"))
-    print("Sent:{}:{}".format(topic, value))
-
 def signal_handler(sig, frame):
     print('Ctrl-C pressed. GPIO cleanup.')
     sensor.disconnect()
@@ -30,34 +25,42 @@ def signal_handler(sig, frame):
 
 class Sensor(GPIOMonitor):
 
-    def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos, retain):
+    def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos, retain, debug):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
-        self.pub = MQTTPublisher(name, mqtthost, mqttport, topic, qos, retain)
-        self.pub.set_listener(process_message)
+        self.pub = MQTTPublisher(name, mqtthost, mqttport, topic, qos, retain, debug)
+        self.pub.set_listener(self.process_message)
         self.channel = channel
         self.interval = interval
         self.edge = edge
+        self.debug = debug
+
+    def process_message(self, client, userdata, message):
+        topic = str(message.topic)
+        value = str(message.payload.decode("utf-8"))
+        print("Sent:{}:{}".format(topic, value))
 
     def disconnect(self):
         self.pub.disconnect()
 
     def notify(self, channel):
         state = GPIO.input(channel)
-        print("Received {} from PIN {}".format(state, channel));
+        if (self.debug):
+            print("Received {} from PIN {}".format(state, channel));
         self.pub.send_msg(state)
 
     def callback(self):
-        GPIO.setup(self.channel, GPIO.IN, pull_up_down=self.edge)
         if (self.edge == GPIO.PUD_UP):
+            GPIO.setup(self.channel, GPIO.IN, pull_up_down=self.edge)
             GPIO.add_event_detect(self.channel, GPIO.RISING, self.notify, bouncetime=BOUNCE_TIME)
         elif (self.edge == GPIO.PUD_DOWN):
+            GPIO.setup(self.channel, GPIO.IN, pull_up_down=self.edge)
             GPIO.add_event_detect(self.channel, GPIO.FALLING, self.notify, bouncetime=BOUNCE_TIME)
         else:
+            GPIO.setup(self.channel, GPIO.IN)
             GPIO.add_event_detect(self.channel, GPIO.BOTH, self.notify, bouncetime=BOUNCE_TIME)
 
     def polling(self):
         GPIO.setup(self.channel, GPIO.IN, pull_up_down=self.edge)
-        self.pub.loop_start()
         while True:
             self.notify()
             time.sleep(self.interval)

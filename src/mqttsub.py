@@ -7,9 +7,12 @@
 import paho.mqtt.client as MQTT
 import time
 
+def on_log(client, userdata, level, buf):
+    print("log: ",buf)
+
 class MQTTSubscriber:
 
-    def __init__(self, name, mqtthost, mqttport, topic, qos):
+    def __init__(self, name, mqtthost, mqttport, topic, qos, debug):
         self.name = name
         self.sender = "{}".format(self.name)
         self.mqtthost = mqtthost
@@ -19,6 +22,8 @@ class MQTTSubscriber:
         self.session = MQTT.Client(self.sender, True, None, MQTT.MQTTv311, "tcp")
         self.session.connect(self.mqtthost, self.mqttport)
         self.session.subscribe(self.topic, self.qos)
+        if (debug):
+            self.session.on_log = on_log
 
     def get_name(self):
         return self.name
