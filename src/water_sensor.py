@@ -3,7 +3,7 @@
 #
 # Water Level Sensor
 #
-from xkcy25v import XKCY25VSensor
+from xkcy25v import XKCY25V
 
 # How to use
 SENSOR_ID = "water_overflow_sensor" # Must be unique in MQTT
@@ -16,6 +16,6 @@ TEST_MQTT_TOPIC = "fish_tank/water_level"
 #TEST_MQTT_RETAIN = True
 #DEBUG = False
 
-sensor = XKCY25VSensor(SENSOR_ID, SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC)
+sensor = XKCY25V(SENSOR_ID, SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC)
 #sensor.toggle_mode()
 sensor.run()

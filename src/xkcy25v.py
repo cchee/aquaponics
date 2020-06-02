@@ -27,16 +27,14 @@ from sensor import Sensor
 
 INTERVAL = 1 # Meaningful only when use polling()
 
-class XKCY25VSensor(Sensor):
+class XKCY25V(Sensor):
 
-    mode = MODE_CHANNEL
-    value = 0
-
-    def __init__(self, name, channel, mode, mqtthost, mqttport, topic, qos, retain, debug):
+    def __init__(self, name, channel, mode, mqtthost, mqttport, topic, qos=0, retain=True, debug=False):
         super().__init__(name, channel, INTERVAL, None, mqtthost, mqttport, topic, qos, retain, debug)
-        GPIO.setup(mode, GPIO.OUT)
-        GPIO.output(mode, int(self.value))
         self.mode = mode
+        self.value = 0
+        GPIO.setup(self.mode, GPIO.OUT)
+        GPIO.output(self.mode, int(self.value))
 
     # sensor sensitivity settings
     def toggle_mode(self):
@@ -57,6 +55,6 @@ class XKCY25VSensor(Sensor):
 #TEST_MQTT_RETAIN = True # Optional
 #DEBUG = False # Optional
 
-#sensor = XKCY25VSensor(SENSOR_ID, SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC, TEST_MQTT_QOS, TEST_MQTT_RETAIN, DEBUG)
+#sensor = XKCY25V(SENSOR_ID, SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC, TEST_MQTT_QOS, TEST_MQTT_RETAIN, DEBUG)
 #sensor.toggle_mode()
 #sensor.run()

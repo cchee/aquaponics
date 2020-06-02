@@ -15,7 +15,7 @@ BOUNCE_TIME = 200
 
 class Sensor(GPIOAgent):
 
-    def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos = 0, retain = True, debug = False):
+    def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos=0, retain=True, debug=False):
         super().__init__(GPIO.BCM, False, {signal.SIGINT : self.signal_handler})
         self.pub = MQTTPublisher(name, mqtthost, mqttport, topic, qos, retain, debug)
         self.pub.set_listener(self.process_message)
