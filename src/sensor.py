@@ -9,8 +9,6 @@ import signal
 import sys
 import time
 from gpio import GPIOMonitor
-from gpio import has_multi_thread
-from gpio import has_event_based
 from mqttpub import MQTTPublisher
 
 BOUNCE_TIME = 200
@@ -25,7 +23,7 @@ def signal_handler(sig, frame):
 
 class Sensor(GPIOMonitor):
 
-    def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos, retain, debug):
+    def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos, retain, debug = False):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
         self.pub = MQTTPublisher(name, mqtthost, mqttport, topic, qos, retain, debug)
         self.pub.set_listener(self.process_message)
@@ -66,15 +64,17 @@ class Sensor(GPIOMonitor):
             time.sleep(self.interval)
 
     def run(self):
-        if (has_multi_thread(self.get_version())):
+        if (self.is_multi_thread()):
             self.callback()
             self.pub.loop_forever()
 
-        elif (has_event_based(self.get_version())):
+        elif (self.is_event_based()):
             self.callback()
             self.pub.loop_forever()
 
         else:
+            # Polling causes high CPU usage
+            # Use polling if and only if GPIO library does not support multithread and event
             self.polling()
 
 # How to use

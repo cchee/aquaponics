@@ -20,7 +20,7 @@ def signal_handler(sig, frame):
 
 class Actuator(GPIOMonitor):
 
-    def __init__(self, name, channel, mqtthost, mqttport, topic, qos, debug):
+    def __init__(self, name, channel, mqtthost, mqttport, topic, qos, debug = False):
         super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
         self.sub = MQTTSubscriber(name, mqtthost, mqttport, topic, qos, debug)
         self.channel = channel
@@ -48,5 +48,5 @@ class Actuator(GPIOMonitor):
 # How to use
 #TEST_MQTT_HOST = "test.mosquitto.org"
 #TEST_MQTT_PORT = 1883
-#actuator = Actuator("water_level_reader", 5, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/upper_water_level", 0, True)
+#actuator = Actuator("overflow_water_valve", 5, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/water_level", 0, True)
 #actuator.run()

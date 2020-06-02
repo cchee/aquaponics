@@ -9,12 +9,16 @@ Goals
 * To utilize time series data collection to have real-time data visualization
 * To have secure OS and software stack for IoT.
 
-Technology Stack
+Hardware Technology Stack
 * Raspberry Pi 3B (or newer)
+* XKC-Y25-V contact-less water sensors
+* Rio Rand 8-channel 12V relay
+* Ehcotech 1" 12V DC Solenoid Valve
+
+Software Technology Stack
 * Raspbian Buster (Need additional steps to secure installation)
 * Docker
 * Python 3.8
-* Node-Red
 * Mosquitto
 * InfluxDB
 * Grafana
