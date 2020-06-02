@@ -8,14 +8,14 @@ import RPi.GPIO as GPIO
 import signal
 import sys
 import time
-from gpio import GPIOMonitor
+from gpio import GPIOAgent
 from mqttpub import MQTTPublisher
 
 BOUNCE_TIME = 200
 GND_PIN = 39
 INTERVAL = 1
 
-class Sensor(GPIOMonitor):
+class Sensor(GPIOAgent):
 
     def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos, retain, debug = False):
         super().__init__(GPIO.BCM, False, {signal.SIGINT : self.signal_handler})

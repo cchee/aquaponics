@@ -7,12 +7,12 @@
 import RPi.GPIO as GPIO
 import signal
 import sys
-from gpio import GPIOMonitor
+from gpio import GPIOAgent
 from mqttsub import MQTTSubscriber
 
 DEFAULT_PIN = 0
 
-class Actuator(GPIOMonitor):
+class Actuator(GPIOAgent):
 
     def __init__(self, name, channel, mqtthost, mqttport, topic, qos, debug = False):
         super().__init__(GPIO.BCM, False, {signal.SIGINT : self.signal_handler})

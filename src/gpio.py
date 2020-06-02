@@ -1,7 +1,7 @@
 # Copyright 2020 All right reserved
 # Author: Chester Chee <chester.chee@gmail.com>
 #
-# GPIOMonitor class - this is the base class for all GPIO actuators/sensors
+# GPIOAgent class - this is the base class for all GPIO actuators/sensors
 #
 import RPi.GPIO as GPIO
 from agent import Agent
@@ -25,7 +25,7 @@ def has_multi_thread(version):
         return True
     return False
 
-class GPIOMonitor(Agent):
+class GPIOAgent(Agent):
 
     def __init__(self, mode, warning, sighandlers):
         super().__init__(sighandlers)

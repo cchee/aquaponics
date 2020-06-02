@@ -9,14 +9,14 @@ import RPi.GPIO as GPIO
 import signal
 import sys
 import time
-from gpio import GPIOMonitor
+from gpio import GPIOAgent
 
 def signal_handler(sig, frame):
     print('Ctrl-C pressed. GPIO cleanup.')
     GPIO.cleanup()
     sys.exit(0)
 
-class Injector(GPIOMonitor):
+class Injector(GPIOAgent):
 
     def __init__(self, channel):
         super().__init__(GPIO.BCM, False, {signal.SIGINT : signal_handler})
