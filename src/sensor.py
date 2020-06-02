@@ -2,7 +2,7 @@
 # Author: Chester Chee <chester.chee@gmail.com>
 #
 # Sensor class - instance of this class monitor edge up/down of a specific GPIO channel
-#                  and then publishes to MQTT for value changes.
+#                and then publishes changed value to MQTT.
 #
 import RPi.GPIO as GPIO
 import signal
