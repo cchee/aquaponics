@@ -12,7 +12,7 @@ def on_log(client, userdata, level, buf):
 
 class MQTTSubscriber:
 
-    def __init__(self, name, mqtthost, mqttport, topic, qos, debug):
+    def __init__(self, name, mqtthost, mqttport, topic, qos, debug = False):
         self.name = name
         self.sender = "{}".format(self.name)
         self.mqtthost = mqtthost

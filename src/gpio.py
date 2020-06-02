@@ -1,7 +1,7 @@
 # Copyright 2020 All right reserved
 # Author: Chester Chee <chester.chee@gmail.com>
 #
-# GPIOMonitor class - this is the base class for all GPIO actuator/sensor
+# GPIOMonitor class - this is the base class for all GPIO actuators/sensors
 #
 import RPi.GPIO as GPIO
 from agent import Agent

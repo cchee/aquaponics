@@ -7,7 +7,7 @@ from mqttsub import MQTTSubscriber
 
 class MQTTPublisher(MQTTSubscriber):
 
-    def __init__(self, name, mqtthost, mqttport, topic, qos, retain, debug):
+    def __init__(self, name, mqtthost, mqttport, topic, qos, retain, debug = False):
         super().__init__(name, mqtthost, mqttport, topic, qos, debug)
         self.retain = retain
 
