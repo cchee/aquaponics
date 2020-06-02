@@ -27,7 +27,7 @@ from sensor import Sensor
 
 INTERVAL = 1 # Meaningful only when use polling()
 
-class WaterLevelSensor(Sensor):
+class XKCY25VSensor(Sensor):
 
     mode = MODE_CHANNEL
     value = 0
@@ -57,6 +57,6 @@ TEST_MQTT_QOS = 0
 TEST_MQTT_RETAIN = True
 DEBUG = False
 
-sensor = WaterLevelSensor(SENSOR_ID, SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC, TEST_MQTT_QOS, TEST_MQTT_RETAIN, DEBUG)
+sensor = XKCY25VSensor(SENSOR_ID, SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC, TEST_MQTT_QOS, TEST_MQTT_RETAIN, DEBUG)
 #sensor.toggle_mode()
 sensor.run()
