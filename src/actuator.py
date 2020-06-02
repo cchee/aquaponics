@@ -12,19 +12,19 @@ from mqttsub import MQTTSubscriber
 
 DEFAULT_PIN = 0
 
-def signal_handler(sig, frame):
-    print('Ctrl-C pressed. GPIO cleanup.')
-    actuator.disconnect()
-    GPIO.cleanup()
-    sys.exit(0)
-
 class Actuator(GPIOMonitor):
 
     def __init__(self, name, channel, mqtthost, mqttport, topic, qos, debug = False):
-        super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
+        super().__init__(GPIO.BCM, False, {signal.SIGINT : self.signal_handler})
         self.sub = MQTTSubscriber(name, mqtthost, mqttport, topic, qos, debug)
         self.channel = channel
         GPIO.setup(self.channel, GPIO.OUT)
+
+    def signal_handler(self, sig, frame):
+        print('Ctrl-C pressed. GPIO cleanup.')
+        self.disconnect()
+        GPIO.cleanup()
+        sys.exit(0)
 
     def process_message(self, client, userdata, message):
         topic = str(message.topic)

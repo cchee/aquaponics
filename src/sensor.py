@@ -15,22 +15,22 @@ BOUNCE_TIME = 200
 GND_PIN = 39
 INTERVAL = 1
 
-def signal_handler(sig, frame):
-    print('Ctrl-C pressed. GPIO cleanup.')
-    sensor.disconnect()
-    GPIO.cleanup()
-    sys.exit(0)
-
 class Sensor(GPIOMonitor):
 
     def __init__(self, name, channel, interval, edge, mqtthost, mqttport, topic, qos, retain, debug = False):
-        super().__init__(GPIO.BCM, False, signal.SIGINT, signal_handler)
+        super().__init__(GPIO.BCM, False, {signal.SIGINT : self.signal_handler})
         self.pub = MQTTPublisher(name, mqtthost, mqttport, topic, qos, retain, debug)
         self.pub.set_listener(self.process_message)
         self.channel = channel
         self.interval = interval
         self.edge = edge
         self.debug = debug
+
+    def signal_handler(self, sig, frame):
+        print('Ctrl-C pressed. GPIO cleanup.')
+        self.disconnect()
+        GPIO.cleanup()
+        sys.exit(0)
 
     def process_message(self, client, userdata, message):
         topic = str(message.topic)
