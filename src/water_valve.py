@@ -1,13 +1,14 @@
 # Copyright 2020 All right reserved
 # Author: Chester Chee <chester.chee@gmail.com>
 #
-# Water Valve Controller
+# Water Valve Actuator - this is a sample Python script to show how to use Actuator
+#                        to process subscribed events from MQTT and set GPIO pin state
 #
 from actuator import Actuator
 
 # How to use
 ACTUATOR_ID = "water_valve" # Must be unique in MQTT
-ACTUATOR_CHANNEL = 5
+ACTUATOR_CHANNEL = 14
 TEST_MQTT_HOST = "localhost"
 TEST_MQTT_PORT = 1883
 TEST_MQTT_TOPIC = "fish_tank/water_level"

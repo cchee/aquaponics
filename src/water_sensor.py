@@ -1,7 +1,9 @@
 # Copyright 2020 All right reserved
 # Author: Chester Chee <chester.chee@gmail.com>
 #
-# Water Level Sensor
+# Water Level Sensor - this is a sample Python script to show how to use XKC-Y25-V
+#                      contact-less water sensor via Raspberry GPIO and publishes
+#                      change events to MQTT
 #
 from xkcy25v import XKCY25V
 

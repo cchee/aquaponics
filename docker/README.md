@@ -15,6 +15,7 @@ following steps to setup.
 * Secure Raspberry (https://www.raspberrypi.org/documentation/configuration/security.md)
 * sudo apt install apt-utils curl git gpiod nginx python3-pip python3-paho-mqtt rsync 
 * sudo pip3 install RPi.GPIO
+* sudo pip3 install influxdb
 * git clone https://github.com/gcgarner/IOTstack.git
 * cd IOTstack
 * ./menu.sh
