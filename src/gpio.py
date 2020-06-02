@@ -43,4 +43,3 @@ class GPIOAgent(Agent):
 
     def is_multi_thread(self):
         return self.multi_thread
-

@@ -23,12 +23,9 @@
 #    otherwise decreases its sensitivity.
 
 import RPi.GPIO as GPIO
-from sensor import INTERVAL
 from sensor import Sensor
 
-DEBUG = False
-SENSOR_CHANNEL = 2
-MODE_CHANNEL = 3
+INTERVAL = 1 # Meaningful only when use polling()
 
 class WaterLevelSensor(Sensor):
 
@@ -50,8 +47,16 @@ class WaterLevelSensor(Sensor):
         return self.value
 
 # How to use it
+SENSOR_ID = "water_overflow_sensor" # Must be unique in MQTT
+SENSOR_CHANNEL = 2
+MODE_CHANNEL = 3
 TEST_MQTT_HOST = "localhost"
 TEST_MQTT_PORT = 1883
-sensor = WaterLevelSensor("overflow_water_level_sensor", SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/water_level", 0, True, DEBUG)
+TEST_MQTT_TOPIC = "fish_tank/water_level"
+TEST_MQTT_QOS = 0
+TEST_MQTT_RETAIN = True
+DEBUG = False
+
+sensor = WaterLevelSensor(SENSOR_ID, SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC, TEST_MQTT_QOS, TEST_MQTT_RETAIN, DEBUG)
 #sensor.toggle_mode()
 sensor.run()

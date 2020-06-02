@@ -10,11 +10,9 @@ import sys
 from gpio import GPIOAgent
 from mqttsub import MQTTSubscriber
 
-DEFAULT_PIN = 0
-
 class Actuator(GPIOAgent):
 
-    def __init__(self, name, channel, mqtthost, mqttport, topic, qos, debug = False):
+    def __init__(self, name, channel, mqtthost, mqttport, topic, qos = 0, debug = False):
         super().__init__(GPIO.BCM, False, {signal.SIGINT : self.signal_handler})
         self.sub = MQTTSubscriber(name, mqtthost, mqttport, topic, qos, debug)
         self.channel = channel
@@ -46,7 +44,12 @@ class Actuator(GPIOAgent):
         self.sub.loop_forever()
 
 # How to use
+#ACTUATOR_ID = "overflow_water_value" # Must be unique in MQTT
+#ACTUATOR_CHANNEL = 5
 #TEST_MQTT_HOST = "test.mosquitto.org"
 #TEST_MQTT_PORT = 1883
-#actuator = Actuator("overflow_water_valve", 5, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/water_level", 0, True)
+#TEST_MQTT_TOPIC = "fish_tank/water_level"
+#TEST_MQTT_QOS = 0
+#DEBUG = True
+#actuator = Actuator(ACTUATOR_ID, ACTUATOR_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/water_level", TEST_MQTT_QOS, DEBUG)
 #actuator.run()
