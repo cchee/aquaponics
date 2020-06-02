@@ -64,11 +64,11 @@ class Sensor(GPIOMonitor):
             time.sleep(self.interval)
 
     def run(self):
-        if (self.is_multi_thread()):
+        if (self.is_multi_thread() == True):
             self.callback()
             self.pub.loop_forever()
 
-        elif (self.is_event_based()):
+        elif (self.is_event_based() == True):
             self.callback()
             self.pub.loop_forever()
 
