@@ -31,10 +31,10 @@ class WaterLevelSensor(Sensor):
 
     def __init__(self, name, channel, mode, mqtthost, mqttport, topic, qos, retain, debug):
         super().__init__(name, channel, INTERVAL, None, mqtthost, mqttport, topic, qos, retain, debug)
-        GPIO.setup(mode, GPIO.OUT)
-        GPIO.output(mode, int(self.value))
         self.mode = mode
         self.value = 0
+        GPIO.setup(self.mode, GPIO.OUT)
+        GPIO.output(self.mode, int(self.value))
 
     # sensor sensitivity settings
     def toggle_mode(self):
