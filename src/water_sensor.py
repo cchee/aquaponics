@@ -26,6 +26,7 @@ import RPi.GPIO as GPIO
 from sensor import INTERVAL
 from sensor import Sensor
 
+DEBUG = False
 SENSOR_CHANNEL = 2
 MODE_CHANNEL = 3
 
@@ -49,8 +50,8 @@ class WaterLevelSensor(Sensor):
         return self.value
 
 # How to use it
-TEST_MQTT_HOST = "test.mosquitto.org"
+TEST_MQTT_HOST = "localhost"
 TEST_MQTT_PORT = 1883
-sensor = WaterLevelSensor("overflow_water_level_sensor", SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/water_level", 0, True, False)
+sensor = WaterLevelSensor("overflow_water_level_sensor", SENSOR_CHANNEL, MODE_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/water_level", 0, True, DEBUG)
 #sensor.toggle_mode()
 sensor.run()
