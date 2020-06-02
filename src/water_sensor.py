@@ -29,14 +29,12 @@ INTERVAL = 1 # Meaningful only when use polling()
 
 class WaterLevelSensor(Sensor):
 
-    mode = MODE_CHANNEL
-    value = 0
-
     def __init__(self, name, channel, mode, mqtthost, mqttport, topic, qos, retain, debug):
         super().__init__(name, channel, INTERVAL, None, mqtthost, mqttport, topic, qos, retain, debug)
         GPIO.setup(mode, GPIO.OUT)
         GPIO.output(mode, int(self.value))
         self.mode = mode
+        self.value = 0
 
     # sensor sensitivity settings
     def toggle_mode(self):
