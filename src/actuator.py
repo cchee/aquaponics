@@ -51,5 +51,5 @@ class Actuator(GPIOAgent):
 #TEST_MQTT_TOPIC = "fish_tank/water_level"
 #TEST_MQTT_QOS = 0 # Optional
 #DEBUG = True # Optional
-#actuator = Actuator(ACTUATOR_ID, ACTUATOR_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, "fish_tank/water_level", TEST_MQTT_QOS, DEBUG)
+#actuator = Actuator(ACTUATOR_ID, ACTUATOR_CHANNEL, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC, TEST_MQTT_QOS, DEBUG)
 #actuator.run()

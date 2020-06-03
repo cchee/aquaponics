@@ -31,6 +31,9 @@ class MQTTSubscriber:
     def set_listener(self, msg_listener):
         self.session.on_message = msg_listener
 
+    def add_msg_callback(self, sub_topic, msg_listener):
+        self.session.message_callback_add(sub_topic, msg_listener)
+
     def loop_start(self):
         self.session.loop_start()
 
