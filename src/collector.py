@@ -53,7 +53,12 @@ class DataCollector(Agent):
 #TEST_MQTT_TOPIC = "fish_tank/#"
 #TEST_MQTT_QOS = 0 # Optional
 #DEBUG = True # Optional
+#DB_HOST = "localhost"
+#DB_PORT = 8086
+#DB_USER = "aqua"
+#DB_PASSWD = "swimming"
+#DB_NAME = "aquaponics"
 #collector = DataCollector(COLLECTOR_ID, TEST_MQTT_HOST, TEST_MQTT_PORT, TEST_MQTT_TOPIC, TEST_MQTT_QOS, DEBUG)
-#collector.set_dbconn(DBHOST, DBPORT, DBUSER, DBPASS, DBNAME)
+#collector.set_dbconn(DB_HOST, DB_PORT, DB_USER, DB_PASSWD, DB_NAME)
 #collector.run()
 
