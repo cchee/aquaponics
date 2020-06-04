@@ -14,9 +14,9 @@ Here are the steps to setup.
 Later on we are going to look into PXE boot installation for Raspberry Pi to setup everything via bare bone system with Ansible
 and then use Ansible to manage all the needed updates, both configuration and software.
 
-To keep things simple, there will be three Ansible playbooks
+To keep things simple, there will be four Ansible playbooks
 * One for Raspbian OS and security patches
 * One for raspi-config
 * One for bare bone software and basic configuration for all Raspberry Pi
-* One for docker applications stack (Mosquitto, InfluxDB, Grafana)
+* One for docker applications stack (Mosquitto, InfluxDB, Grafana) with data backup and upload to Dropbox
 
