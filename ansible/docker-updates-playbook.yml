@@ -1,0 +1,29 @@
+################################################################################
+#  description: Installs/applies OS updates and patches on Raspbian Raspberry Pi
+#  usage: ansible-playbook RaspberryPi_Raspbian-Apply-OS-Updates-playbook.yml --extra-vars 'HostOrGroup=raspberrypi'
+#  author: Ernest G. Wilson II <ErnestGWilsonII@gmail.com> (https://github.com/ernestgwilsonii)
+#  license: MIT
+################################################################################
+
+# Ansible Playbook options
+# REF: http://docs.ansible.com/ansible/playbooks.html
+#####################################################
+
+- name: Install docker packages on Raspbian Raspberry Pi
+  hosts: "{{ HostOrGroup|default ('localhost') }}"
+  serial: "100%"
+  gather_facts: False
+  become: true
+  become_user: root 
+  tasks:
+
+# apt - Manages apt-packages
+# REF: http://docs.ansible.com/ansible/apt_module.html
+######################################################
+
+  - name: Install docker packages
+    apt:
+      update_cache: yes
+      install_recommends: yes
+      autoremove: yes
+      name: ['docker-ce','docker-compose']

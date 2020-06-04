@@ -1,0 +1,59 @@
+# Ansible Playbook options
+# REF: http://docs.ansible.com/ansible/playbooks.html
+#####################################################
+
+- name: Harden security and install base packages on Raspbian Raspberry Pi
+  hosts: "{{ HostOrGroup|default ('localhost') }}"
+  serial: "100%"
+  gather_facts: False
+  become: true
+  become_user: root 
+
+  vars:
+    NEWPASSWORD: testing123
+    USER: g3nt00r
+
+  tasks:
+
+# apt - Manages apt-packages
+# REF: http://docs.ansible.com/ansible/apt_module.html
+######################################################
+
+  - name: Install base packages
+    apt:
+      update_cache: yes
+      install_recommends: yes
+      autoremove: yes
+      name: ['apt-utils','curl','git','gpiod','python3-pip','python3-rpi.gpio','python3-paho-mqtt','python3-influxdb','rsync']
+
+#  - name: Change default user and password
+#    shell: "(echo '{{ NEWPASSWORD }}'; echo '{{ NEWPASSWORD }}') | adduser {{ USER }}; usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi {{ USER }}"
+#    shell: "(echo '{{ NEWPASSWORD }}'; echo '{{ NEWPASSWORD }}') | adduser {{ USER }}; usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi {{ USER }}; deluser -remove-home pi"
+
+  - name: Install openssh-server packages
+    apt:
+      update_cache: yes
+      install_recommends: yes
+      autoremove: yes
+      name: openssh-server
+
+  - name: Install fail2ban packages
+    apt:
+      update_cache: yes
+      install_recommends: yes
+      autoremove: yes
+      name: fail2ban
+
+  - name: Setup fail2ban rules
+    shell: "cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local;"
+
+  - name: Install firewall packages
+    apt:
+      update_cache: yes
+      install_recommends: yes
+      autoremove: yes
+      name: ufw
+
+  - name: Setup most restrictive firewall rules
+    shell: "ufw enable; ufw default deny incoming; ufw default allow outgoing; ufw allow ssh; ufw limit ssh/tcp"
+
