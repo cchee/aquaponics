@@ -10,7 +10,7 @@ class Agent:
 
     def __init__(self, sighandlers):
         self.hostname = os.uname()[1]
-        self.hpid = os.getpid()
+        self.pid = os.getpid()
         for sig, handler in sighandlers.items():
             signal.signal(sig, handler)
 
