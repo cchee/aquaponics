@@ -72,7 +72,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Water pump in fish tank
 * Fish tank pump to 1st shelf, 1st shelf drain to 2nd shelf, 2nd shelf drain to 3rd shelf, 3rd shelf drain to 4th shelf, 4th shelf drain to solid filter in the fish tank
 * Each grow bed can use red worms to minimize clogging, hence, less maintenance
-* Water pump needs to be placed within a filter bad to eliminate large solid debris
+* Water pump needs to be placed within a filter bag to prevent large solid debris from damaging the pump
 ##### Pros
 * Simple to setup
 * Less mechnical parts
@@ -85,9 +85,21 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 ##### Application
 * Microgreen
 * Lettuce
-
+#### All-In-One Vertical
+* All vertical grow towers hang from top shelf
+* Fish tank on the bottom shelf
+* Water pump in fish tank
+* Water pump needs to be placed within a filter bag to prevent large solid debris from damaging the pump
+* Red worm can be used in grow media in tower to prevent root rot and promote healthy grow
+##### Pros
+* More produce can be grow in this setup
+* No more limited shelf height
+* Each tower can be taken out for maintenance without interruping others
+##### Cons
+* More efforts are need to setup each grow tower and plumbing to capture all returns from grow tower
+* Not all plants are suitable for this kind of setup
 ## Notes
 * Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance
-* Flood-and-drain media bed container requires minimium height of 7.5 inches
+* Flood-and-drain media container requires minimium height of 7.5 inches
 * Red worms can be used in media bed to prevent clogging because they consume organic debris such as dead root, dead flowers and dead leaves from plants. They help to prevent mold on the grow bed due to organic debris left on grow bed surface. Worm casting also provide additional organic nutrients to plant.
 * High temperature causes some of the vegetables to taste bitter. For example, lettuce.
