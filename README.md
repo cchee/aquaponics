@@ -62,6 +62,9 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 ##### Cons
 * Stop entire system when maintenance work is needed
 * Limited shelf height for grow bed
+##### Application
+* Microgreen
+* Lettuce
 #### All-In-One Gravity II
 * Grow beds on top four shelves
 * Fish tank on bottom shelf
@@ -76,7 +79,11 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * One extra shelf for grow bed compares to All-In-On Gravity I
 ##### Cons
 * Stop entire system when maintenance work is needed
+* Limited shelf height for grow bed except the top shelf
 * Extra maintenance work to clean up filter for water pump
+##### Application
+* Microgreen
+* Lettuce
 
 ## Notes
 * Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance
