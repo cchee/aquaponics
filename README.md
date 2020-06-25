@@ -35,5 +35,5 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 ## Infrastructure Setup
 * Each rack is managed by one Raspberry Pi with sensors and actuators. 
 * Each rack has five or less shelf depending on which aquaponics method is being used. Aquaponic methods are flood-and-drain media filled bed, vertical media filled tower, nutrient film technique (NFT) and raft (aka deep water culture). 
-* Each rack has a water pump. Water outlets from pump go to fish tank and grow beds to maintain pressurize water flow, all water flow loop back to sump tank using gravity. Venturi outlet with shut off valve is attach to water outlet from pump to oxygenate water without additional air pump. Pressurize water flow with water valve provides flexibility to shut off any section of the system for maintenance without flooding.
-* Each rack may have zero or more grow light, depends on which aquaponic method is being used in each rack or each shelf.
+* Each rack has a water pump. Water outlets from pump go to fish tank and grow beds to maintain pressurize water flow, all water flow loop back to sump tank using gravity. Water outlet from pump with venturi attachment oxygenates water without a need for air pump in the system. Pressurize water flow with water valve provides flexibility to shut off any section of the system for maintenance without flooding.
+* Each rack may have zero or more grow light, depends on which aquaponic method is being used in each rack or each shelf as well as the location of the rack (i.e indoor verse outdoor).
