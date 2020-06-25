@@ -14,9 +14,9 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 ## Hardware Technology Stack
 
 * Raspberry Pi 3B (or newer)
-* XKC-Y25-V contact-less water sensors
-* Rio Rand 8-channel 12V relay
-* Ehcotech 1" 12V DC Solenoid Valve
+* Rio Rand 8-channel 12V relay (digital signal)
+* Ehcotech 1" 12V DC Solenoid Valve (n/a, power on/off)
+* XKC-Y25-V contact-less water sensors (digital signal)
 
 ## Software Technology Stack
 
