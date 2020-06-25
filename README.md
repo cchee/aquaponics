@@ -15,7 +15,11 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 
 * Raspberry Pi 3B (or newer)
 * Rio Rand 8-channel 12V relay (digital signal)
+
+### Actuators
 * Ehcotech 1" 12V DC Solenoid Valve (n/a, power on/off)
+
+### Sensors
 * XKC-Y25-V contact-less water sensors (digital signal)
 
 ## Software Technology Stack
