@@ -23,8 +23,10 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 
 ### Sensors
 * XKC-Y25-V contact-less water sensors (digital signal) - detects water levels
-* temperature sensors - detects temperature - approximately 70F - 75F (depends on plant)
+* temperature sensors - detects air/water temperature - approximately 70F - 75F (depends on plant)
 * humidity sensors - detects humidity - approximately 60% -70% (depends on plant)
+* electro conductivity (EC) sensors - detects nutrient levels
+* pH sensors - detects pH in water to optimize nutrient absorption by plant (ideal pH for all plants: 6.5 relative to water temperature)
 
 ## Software Technology Stack
 
@@ -45,3 +47,4 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 ## Notes
 * Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance
 * Red worms can be used in media bed to prevent clogging due to organic debris such as dead root and leaves from plants. Worm casting also provide additional organic nutrients to plant. Red worm can not be used in hydroponic setup using nutrient solution.
+* High temperature causes some of the vegetables to taste bitter. For example, lettuce.
