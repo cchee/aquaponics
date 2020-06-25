@@ -22,6 +22,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Water heater 120V AC (n/a, power on/off) - maintain water temperature for aquaculture
 * LED grow light (n/a, power on/off) - provide blue/red light for leaves and fruit grow respectively
 * Fans 12V DC (n/a, power on/off) - humidity/temperature control
+* Fish feeder 12V DC (n/a, power on/off) - automate fish feeding, but still require manual refill
 
 ### Sensors
 * XKC-Y25-V contact-less water sensors (digital signal) - detects water levels
