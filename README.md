@@ -54,7 +54,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Sump tank on bottom shelf
 * Water pump in sump tank
 * Fish tank drain to 2nd shelf, 2nd shelf drain to 3rd shelf, 3rd shelf drain to 4th shelf, and 4th to solid filter in the sump tank
-* Each grow bed can use red worms to minimize clogging, hence, less maintenance
+* Each grow bed uses red worms to minimize clogging, hence, less maintenance
 * Sump tank should have additional filter to ensure water pump is going to pump water without any large debris.
 ##### Pros
 * Simple to setup
@@ -71,7 +71,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Fish tank on bottom shelf
 * Water pump in fish tank
 * Fish tank pump to 1st shelf, 1st shelf drain to 2nd shelf, 2nd shelf drain to 3rd shelf, 3rd shelf drain to 4th shelf, 4th shelf drain to solid filter in the fish tank
-* Each grow bed can use red worms to minimize clogging, hence, less maintenance
+* Each grow bed uses red worms to minimize clogging, hence, less maintenance
 * Water pump needs to be placed within a filter bag to prevent large solid debris from damaging the pump
 ##### Pros
 * Simple to setup
@@ -90,7 +90,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Fish tank on the bottom shelf
 * Water pump in fish tank
 * Water pump needs to be placed within a filter bag to prevent large solid debris from damaging the pump
-* Red worm can be used in grow media in tower to prevent root rot and promote healthy grow
+* Use red worm in each grow tower to prevent root rot and promote healthy grow
 ##### Pros
 * More produce can be grow in this setup
 * No more limited shelf height
