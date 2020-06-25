@@ -17,10 +17,14 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Rio Rand 8-channel 12V relay (digital signal)
 
 ### Actuators
-* Ehcotech 1" 12V DC Solenoid Valve (n/a, power on/off)
+* Ehcotech 1" 12V DC Solenoid Valve (n/a, power on/off) - water refill
+* Water pump 120V AC (n/a, power on/off) - circulate water
+* Fans 12V DC (n/a, power on/off) - temperature control
 
 ### Sensors
-* XKC-Y25-V contact-less water sensors (digital signal)
+* XKC-Y25-V contact-less water sensors (digital signal) - detects water levels
+* temperature sensors - detects temperature - approximately 70F - 75F (depends on plant)
+* humidity sensors - detects humidity - approximately 60% -70% (depends on plant)
 
 ## Software Technology Stack
 
@@ -37,3 +41,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Each rack has five or less shelf depending on which aquaponics method is being used. Aquaponic methods are flood-and-drain media filled bed, vertical media filled tower, nutrient film technique (NFT) and raft (aka deep water culture). 
 * Each rack has a water pump. Water outlets from pump go to fish tank and grow beds to maintain pressurize water flow, all water flow loop back to sump tank using gravity. Water outlet from pump with venturi attachment oxygenates water without a need for air pump in the system. Pressurize water flow with water valve provides flexibility to shut off any section of the system for maintenance without flooding.
 * Each rack may have zero or more grow light, depends on which aquaponic method is being used in each rack or each shelf as well as the location of the rack (i.e indoor verse outdoor).
+
+## Notes
+* Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance
+* Red worms can be used in media bed to prevent clogging due to organic debris from dead root and leaves from plants. Worm casting also provide additional organic nutrients to plant. Red worm can not be used in hydroponic setup using nutrient solution.
