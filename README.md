@@ -27,3 +27,8 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Mosquitto - messaging middleware
 * InfluxDB - time series database
 * Grafana - data visualization
+
+## Infrastructure Setup
+* Each rack is managed by one Raspberry Pi with sensors and actuators. 
+* Each rack has five or less shelf depending on which aquaponics method is being used. Aquaponic methods are flood-and-drain media filled bed, nutrient film technique (NFT), vertical media filled tower, and raft. 
+* Each rack has a water pump. Water outlet from pump goes to fish tank as well as growth bed to maintain pressurize water flow, all water flow loop back to sump tank using gravity. Venturi outlet is attach to water outlet from pump to oxygenate water without additional air pump.
