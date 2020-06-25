@@ -64,7 +64,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Grow beds on top four shelves
 * Fish tank on bottom shelf
 * Water pump in fish tank
-* Fish tank pump to 1nd shelf, 1nd shelf drain to 2rd shelf, 2rd shelf drain to 3th shelf, 3th shelf drain to 4th shelf, 4th shelf drain to solid filter in the fish tank
+* Fish tank pump to 1st shelf, 1st shelf drain to 2nd shelf, 2nd shelf drain to 3rd shelf, 3rd shelf drain to 4th shelf, 4th shelf drain to solid filter in the fish tank
 * Each grow bed can use red worms to minimize clogging, hence, less maintenance
 * Water pump needs to be placed within a filter bad to eliminate large solid debris
 ##### Pros
