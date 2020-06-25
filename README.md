@@ -46,5 +46,5 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 
 ## Notes
 * Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance
-* Red worms can be used in media bed to prevent clogging because they consume organic debris such as dead root, dead flowers and dead leaves from plants. They help to prevent mold on the grow bed due to organic debris left on grow bed surface. Worm casting also provide additional organic nutrients to plant. Red worm can not be used in hydroponic setup using nutrient solution.
+* Red worms can be used in media bed to prevent clogging because they consume organic debris such as dead root, dead flowers and dead leaves from plants. They help to prevent mold on the grow bed due to organic debris left on grow bed surface. Worm casting also provide additional organic nutrients to plant.
 * High temperature causes some of the vegetables to taste bitter. For example, lettuce.
