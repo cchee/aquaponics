@@ -26,3 +26,4 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Mosquitto
 * InfluxDB
 * Grafana
+* Ansible
