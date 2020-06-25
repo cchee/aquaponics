@@ -44,4 +44,4 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 
 ## Notes
 * Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance
-* Red worms can be used in media bed to prevent clogging due to organic debris from dead root and leaves from plants. Worm casting also provide additional organic nutrients to plant. Red worm can not be used in hydroponic setup using nutrient solution.
+* Red worms can be used in media bed to prevent clogging due to organic debris such as dead root and leaves from plants. Worm casting also provide additional organic nutrients to plant. Red worm can not be used in hydroponic setup using nutrient solution.
