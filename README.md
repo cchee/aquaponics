@@ -23,9 +23,9 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 
 ### Sensors
 * XKC-Y25-V contact-less water sensors (digital signal) - detects water levels
-* temperature sensors - detects room and water temperature - approximately 70F - 75F (depends on plant)
-* humidity sensors - detects humidity - approximately 60% -70% (depends on plant)
-* electro conductivity (EC) sensors - detects nutrient levels
+* temperature sensors - detects room and water temperature - approximately 70F - 75F (varies on plant)
+* humidity sensors - detects humidity - approximately 60% -70% (varies on plant)
+* electro conductivity (EC) sensors - detects nutrient levels (varies on plant)
 * pH sensors - detects pH in water to optimize nutrient absorption by plant (ideal pH for all plants: 6.5 relative to water temperature)
 
 ## Software Technology Stack
