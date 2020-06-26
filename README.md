@@ -33,6 +33,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 
 ## Software Technology Stack
 
+* Debian DNS server with PXE boot for Raspberry Pi 3B or newer
 * Raspbian Buster (Need additional steps to secure installation)
 * Ansible - to automate deployment of OS and softare upgrade
 * Docker - to containerize application stack
