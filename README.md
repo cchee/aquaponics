@@ -94,10 +94,25 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 ##### Pros
 * More produce can be grow in this setup
 * No more limited shelf height
-* Each tower can be taken out for maintenance without interruping others
+* Each tower can be taken out for maintenance without interrupting others
+* Overall weight is lighter than all flood-and-drain grow beds in All-In-One Gravity series system
 ##### Cons
 * More efforts are need to setup each grow tower and plumbing to capture all returns from grow tower
 * Not all plants are suitable for this kind of setup
+#### All-In-One Combo
+* All vertical grow towers hang from top shelf
+* Fish tank on the bottom shelf
+* One grow bed on a shelf above the fish tank
+* Water pump in fish tank
+* Water pump needs to be placed within a filter bag to prevent large solid debris from damaging the pump
+* Use red worm in each grow tower and grow bed to promote healthy grow
+##### Pros
+* More variety of produce can be grown in this setup
+* Each tower can be taken out from maintenance without interrupting others
+* Flood-and-drain or raft grow bed above fish tank serve as water collection for grow towers as well as grow bed
+* Less plumbing setup than All-In-One Vertical
+##### Cons
+* Overall weight is heavier than All-In-One Vertical
 ## Notes
 * Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance
 * Flood-and-drain media container requires minimium height of 7.5 inches
