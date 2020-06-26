@@ -103,6 +103,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * All vertical grow towers hang from top shelf
 * Fish tank on the bottom shelf
 * One grow bed on a shelf above the fish tank
+* Grow bed drain to solid filter in the fish tank
 * Water pump in fish tank
 * Water pump needs to be placed within a filter bag to prevent large solid debris from damaging the pump
 * Use red worm in each grow tower and grow bed to promote healthy grow
