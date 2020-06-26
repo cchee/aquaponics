@@ -6,7 +6,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 
 ## Goals
 
-* To have real-time event based sensors for fish tank pH, temperature, water level (sump tank), planting area's temperature and humidity, grow light intensity, EC and ppm monitoring
+* To have real-time event based sensors for fish tank pH, temperature, water level (fish tank and sump tank), planting area's temperature and humidity, grow light intensity, EC and ppm monitoring
 * To have actuator to automate fish feed, grow lights and dehumidifier in planting area, fish tank water outlet flow control and water pump.
 * To utilize time series data collection to have real-time data visualization
 * To have secure OS and software stack for IoT.
