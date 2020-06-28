@@ -116,7 +116,9 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 ##### Cons
 * Overall weight is heavier than All-In-One Vertical
 ## Notes
-* Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance
-* Flood-and-drain media container requires minimium height of 7.5 inches
+* Bell siphon is used in flood-and-drain media bed to eliminate any mechnical part to minimize maintenance.
+* Flood-and-drain media container requires minimium height of 7.5 inches.
+* Water leve in media grow bed should at least 2 inches between the media surface to avoid mold and alage grow on the media.
+* Mold and algae grow on the media kills plants due to root rot and compete for oxygen for healthy root grow.
 * Red worms can be used in media bed to prevent clogging because they consume organic debris such as dead root, dead flowers and dead leaves from plants. They help to prevent mold on the grow bed due to organic debris left on grow bed surface. Worm casting also provide additional organic nutrients to plant.
 * High temperature causes some of the vegetables to taste bitter. For example, lettuce.
