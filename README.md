@@ -91,7 +91,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Fish tank on the bottom shelf
 * Water pump in fish tank
 * Water pump needs to be placed within a filter bag to prevent large solid debris from damaging the pump
-* Use red worm in each grow tower to prevent root rot and promote healthy grow
+* Use red worm in each grow tower to prevent root rot, to boost nutrient and to promote healthy grow
 ##### Pros
 * More produce can be grow in this setup
 * No more limited shelf height
@@ -107,7 +107,7 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Grow bed drain to solid filter in the fish tank
 * Water pump in fish tank
 * Water pump needs to be placed within a filter bag to prevent large solid debris from damaging the pump
-* Use red worm in each grow tower and grow bed to promote healthy grow
+* Use red worm in each grow tower and grow bed to boost nutrient and to promote healthy grow
 ##### Pros
 * More variety of produce can be grown in this setup
 * Each tower can be taken out from maintenance without interrupting others
