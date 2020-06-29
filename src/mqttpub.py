@@ -1,7 +1,7 @@
 # Copyright 2020 All right reserved
 # Author: Chester Chee <chester.chee@gmail.com>
 #
-# MQTTPublisher class - this class public message in specific format via a specific topic to MQTT broker
+# MQTTPublisher class - this class publishes message in specific format via a specific topic to MQTT broker
 #
 from mqttsub import MQTTSubscriber
 
