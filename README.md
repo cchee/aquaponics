@@ -122,4 +122,4 @@ This is based on Raspberry Pi 3B (may look into Pi 4 later if budget allows). To
 * Mold and algae grow on the media kills plants due to root rot and they also compete for oxygen for healthy root grow.
 * Red worms can be used in media bed to prevent clogging because they consume organic debris such as dead root, dead flowers and dead leaves from plants. They help to prevent mold on the grow bed due to organic debris left on grow bed surface. Worm casting also provide additional organic nutrients to plant.
 * High temperature causes some of the vegetables to taste bitter. For example, lettuce.
-* Brand new system takes about 4 weeks for beneficial bacterias to reside and to complete ammonia cycle of the system. 
+* Brand new system takes about 4 weeks for beneficial bacterias (AOB and NOB) to reside and to complete nitrogen cycle of the system. 
