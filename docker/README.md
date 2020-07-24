@@ -41,3 +41,5 @@ To tie Node-Red with InfluxDB and Grafana together, check out https://www.youtub
 To access influxdb, after login to Raspberry Pi and use influx DB CLI
 * docker exec -it influxdb /bin/bash
 * influx
+
+Using Peter's script is just to get thing going, long term plan is to use ansible.
